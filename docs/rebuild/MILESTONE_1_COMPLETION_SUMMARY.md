@@ -96,6 +96,16 @@ empty. They reject forbidden module dependencies and reserve rules for future `a
 allowed internal dependency edges, mandatory tests, and the absence of Docker/image plugins in the
 foundation lifecycle.
 
+### Remote GitHub Actions evidence
+
+| Item | Result |
+|---|---|
+| GitHub remote | `https://github.com/kevinyyhdev/mall-rebuild` (configured as `git@github.com:kevinyyhdev/mall-rebuild.git`) |
+| First green run | Exact run link/ID was not supplied; [Verify workflow history](https://github.com/kevinyyhdev/mall-rebuild/actions/workflows/verify.yml) |
+| Commit tested | `c249b4a3f05f96f5c80543ea4490b06bda5c91a0` (`origin/main`) |
+| Remote workflow result | Passed; the GitHub Actions workflow was confirmed green after the push |
+| Remote red/green rehearsal | Outstanding; the local negative control is complete, but a deliberate failing remote run and recovered green run have not been recorded |
+
 ## 5. System design and trade-offs
 
 | Choice | Trade-off |
@@ -125,7 +135,7 @@ foundation is independently testable, and later milestones can add one responsib
 
 The following work is intentionally deferred:
 
-- Run the workflow in a remote GitHub repository and record the required red/green CI rehearsal.
+- Complete and record the deliberate red/green rehearsal in remote GitHub Actions.
 - Add Spring Boot application entry points when they can be tested without hidden service dependencies.
 - Add versioned database migrations and tested persistence code.
 - Build reproducible infrastructure and Docker configuration.
