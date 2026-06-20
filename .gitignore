@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.log
+
+**/target/
+.m2/
+
+.env
+.env.*
+!.env.example
+*.local
+
+.mvn/timing.properties
